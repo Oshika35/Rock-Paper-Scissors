@@ -21,27 +21,37 @@ function computerPlay() {
 }
 
 function playRound() {
+    const playerValue = 1;
+    const computerValue = 2;
+    const tieValue = 0;
     const playerSelection = getUserInput();
     const computerSelection = computerPlay();
     if (playerSelection == computerSelection) {
+        tieValue;
         return 'Tie';
     }
     else if (playerSelection == 'Rock' && computerSelection == 'Scissors') {
+        playerValue;
         return 'You win! Rock beats Scissors';
     }
     else if (playerSelection == 'Paper' && computerSelection == 'Rock') {
+        playerValue;
         return 'You win! Paper beats Rock';
     }
     else if (playerSelection == 'Scissors' && computerSelection == 'Paper') {
+        playerValue;
         return 'You win! Scissors beats Paper';
     }
     else if (playerSelection == 'Rock' && computerSelection == 'Paper') {
+        computerValue;
         return 'You Lose! Paper beats Rock';
     }
     else if (playerSelection == 'Paper' && computerSelection == 'Scissors') {
+        computerValue;
         return 'You lose! Scissors beats Paper';
     }
     else if (playerSelection == 'Scissors' && computerSelection == 'Rock') {
+        computerValue;
         return 'You lose! Rock beats Scissors';
     }
 }
