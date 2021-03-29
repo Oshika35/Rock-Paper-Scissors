@@ -49,20 +49,22 @@ function playRound() {
 function game() {
     let playerScore = 0;
     let computerScore = 0;
-    playRound();
-    if (playRound == 'You win! Rock beats Scissors' || 'You win! Paper beats Rock' || 'You win! Scissors beats Paper') {
+    const round = playRound();
+    console.log(playerScore, 'playerScore');
+    if (round == 'You win! Rock beats Scissors' || 'You win! Paper beats Rock' || 'You win! Scissors beats Paper') {
         playerScore += 1;
         alert("You scored 1 point");
     }
-    else if (playRound == 'tie') {
+    else if (round == 'tie') {
         playerScore += 0;
         computerScore += 0;
         alert("No point awarded");
     }
-    else if (playRound == 'You Lose! Paper beats Rock' || 'You Lose! Paper beats Rock' || 'You Lose! Paper beats Rock') {
+    else if (round == 'You Lose! Paper beats Rock' || 'You Lose! Paper beats Rock' || 'You Lose! Paper beats Rock') {
         computerScore += 1;
         alert("Your opponent scored 1 point");
     }
+    console.log(playerScore, 'playerScore');
 }
 
 alert(game());
