@@ -46,25 +46,28 @@ function playRound() {
     }
 }
 
-function game() {
+function game(result) {
     let playerScore = 0;
     let computerScore = 0;
-    const round = playRound();
+    const round = alert(playRound());
     console.log(playerScore, 'playerScore');
+    console.log(computerScore, 'computerScore');
     if (round == 'You win! Rock beats Scissors' || 'You win! Paper beats Rock' || 'You win! Scissors beats Paper') {
         playerScore += 1;
-        alert("You scored 1 point");
+        result = "You scored 1 point";
     }
     else if (round == 'tie') {
         playerScore += 0;
         computerScore += 0;
-        alert("No point awarded");
+        result = "No point awarded";
     }
     else if (round == 'You Lose! Paper beats Rock' || 'You Lose! Paper beats Rock' || 'You Lose! Paper beats Rock') {
         computerScore += 1;
-        alert("Your opponent scored 1 point");
+        result = "Your opponent scored 1 point";
     }
     console.log(playerScore, 'playerScore');
+    console.log(computerScore, 'computerScore');
+    return result;
 }
 
 alert(game());
