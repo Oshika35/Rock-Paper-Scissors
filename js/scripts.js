@@ -2,7 +2,7 @@ let playerScore = 0;
 let computerScore = 0;
 
 function getUserInput() {
-    let answer = prompt("Rock, Paper or Scissors ?").toLowerCase();
+    let answer = prompt('Rock, Paper or Scissors ?').toLowerCase();
     if (answer == 'rock') {
         return 'Rock';
     }
@@ -13,7 +13,7 @@ function getUserInput() {
         return 'Scissors';
     }
     else {
-        alert("Incorrect answer, try again");
+        alert('Incorrect answer, try again');
         return getUserInput();
     }
 }
@@ -26,25 +26,25 @@ function computerPlay() {
 function playRound() {
     const playerSelection = getUserInput();
     const computerSelection = computerPlay();
-    if (playerSelection == computerSelection) {
+    if (playerSelection === computerSelection) {
         return 'Tie';
     }
-    else if (playerSelection == 'Rock' && computerSelection == 'Scissors') {
+    else if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
         return 'You win! Rock beats Scissors';
     }
-    else if (playerSelection == 'Paper' && computerSelection == 'Rock') {
+    else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
         return 'You win! Paper beats Rock';
     }
-    else if (playerSelection == 'Scissors' && computerSelection == 'Paper') {
+    else if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
         return 'You win! Scissors beats Paper';
     }
-    else if (playerSelection == 'Rock' && computerSelection == 'Paper') {
+    else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
         return 'You Lose! Paper beats Rock';
     }
-    else if (playerSelection == 'Paper' && computerSelection == 'Scissors') {
+    else if (playerSelection === 'Paper' && computerSelection === 'Scissors') {
         return 'You lose! Scissors beats Paper';
     }
-    else if (playerSelection == 'Scissors' && computerSelection == 'Rock') {
+    else if (playerSelection === 'Scissors' && computerSelection === 'Rock') {
         return 'You lose! Rock beats Scissors';
     }
 }
@@ -59,16 +59,16 @@ function game() {
             playerScore += 1;
             console.log(playerScore, 'playerScore');
             console.log(computerScore, 'computerScore');
-            alert("You scored 1 point");
+            alert('You scored 1 point');
         }
         else if (round === 'Tie') {
-            alert("No point awarded");
+            alert('No point awarded');
         }
         else if (round === 'You Lose! Paper beats Rock' || round === 'You Lose! Paper beats Rock' || round === 'You Lose! Paper beats Rock') {
             computerScore += 1;
             console.log(playerScore, 'playerScore');
             console.log(computerScore, 'computerScore');
-            alert("Your opponent scored 1 point");
+            alert('Your opponent scored 1 point');
         }
         if (playerScore === 3) {
             alert('You won');
