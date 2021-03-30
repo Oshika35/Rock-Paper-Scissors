@@ -1,3 +1,6 @@
+let playerScore = 0;
+let computerScore = 0;
+
 function getUserInput() {
     let answer = prompt("Rock, Paper or Scissors ?").toLowerCase();
     if (answer == 'rock') {
@@ -46,29 +49,34 @@ function playRound() {
     }
 }
 
-function game(result) {
-    let playerScore = 0;
-    let computerScore = 0;
-    const round = alert(playRound());
-    console.log(playerScore, 'playerScore');
-    console.log(computerScore, 'computerScore');
-    if (round == 'You win! Rock beats Scissors' || 'You win! Paper beats Rock' || 'You win! Scissors beats Paper') {
-        playerScore += 1;
-        result = "You scored 1 point";
+function game() {
+    while (playerScore < 3 && computerScore < 3) {
+        const round = playRound();
+        alert(round);
+        console.log(playerScore, 'playerScore');
+        console.log(computerScore, 'computerScore');
+        if (round === 'You win! Rock beats Scissors' || round === 'You win! Paper beats Rock' || round === 'You win! Scissors beats Paper') {
+            playerScore += 1;
+            console.log(playerScore, 'playerScore');
+            console.log(computerScore, 'computerScore');
+            alert("You scored 1 point");
+        }
+        else if (round === 'Tie') {
+            alert("No point awarded");
+        }
+        else if (round === 'You Lose! Paper beats Rock' || round === 'You Lose! Paper beats Rock' || round === 'You Lose! Paper beats Rock') {
+            computerScore += 1;
+            console.log(playerScore, 'playerScore');
+            console.log(computerScore, 'computerScore');
+            alert("Your opponent scored 1 point");
+        }
+        if (playerScore === 3) {
+            alert('You won');
+        }
+        if (computerScore === 3) {
+            alert('You lost');
+        }
     }
-    else if (round == 'tie') {
-        playerScore += 0;
-        computerScore += 0;
-        result = "No point awarded";
-    }
-    else if (round == 'You Lose! Paper beats Rock' || 'You Lose! Paper beats Rock' || 'You Lose! Paper beats Rock') {
-        computerScore += 1;
-        result = "Your opponent scored 1 point";
-    }
-    console.log(playerScore, 'playerScore');
-    console.log(computerScore, 'computerScore');
-    console.log(round, 'round');
-    return result;
 }
 
-alert(game());
+game();
