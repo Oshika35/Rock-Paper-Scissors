@@ -53,12 +53,8 @@ function game() {
     while (playerScore < 3 && computerScore < 3) {
         const round = playRound();
         alert(round);
-        console.log(playerScore, 'playerScore');
-        console.log(computerScore, 'computerScore');
         if (round === 'You win! Rock beats Scissors' || round === 'You win! Paper beats Rock' || round === 'You win! Scissors beats Paper') {
             playerScore += 1;
-            console.log(playerScore, 'playerScore');
-            console.log(computerScore, 'computerScore');
             alert('You scored 1 point');
         }
         else if (round === 'Tie') {
@@ -66,8 +62,6 @@ function game() {
         }
         else if (round === 'You Lose! Paper beats Rock' || round === 'You Lose! Paper beats Rock' || round === 'You Lose! Paper beats Rock') {
             computerScore += 1;
-            console.log(playerScore, 'playerScore');
-            console.log(computerScore, 'computerScore');
             alert('Your opponent scored 1 point');
         }
         if (playerScore === 3) {
