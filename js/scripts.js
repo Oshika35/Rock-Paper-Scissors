@@ -1,6 +1,3 @@
-let playerScore = 0;
-let computerScore = 0;
-
 function getUserInput() {
     let answer = prompt('Rock, Paper or Scissors ?').toLowerCase();
     if (answer == 'rock') {
@@ -23,9 +20,7 @@ function computerPlay() {
     return computerTurn[Math.floor(Math.random() * computerTurn.length)];
 }
 
-function playRound() {
-    const playerSelection = getUserInput();
-    const computerSelection = computerPlay();
+function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         return 'Tie';
     }
@@ -50,8 +45,12 @@ function playRound() {
 }
 
 function game() {
+    let playerScore = 0;
+    let computerScore = 0;
     while (playerScore < 3 && computerScore < 3) {
-        const round = playRound();
+        const playerSelection = getUserInput();
+        const computerSelection = computerPlay();
+        const round = playRound(playerSelection, computerSelection);
         alert(round);
         if (round === 'You win! Rock beats Scissors' || round === 'You win! Paper beats Rock' || round === 'You win! Scissors beats Paper') {
             playerScore += 1;
