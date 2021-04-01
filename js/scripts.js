@@ -44,7 +44,14 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+
 function game() {
+    const playerWin = ['You win! Rock beats Scissors',
+                       'You win! Paper beats Rock',
+                       'You win! Scissors beats Paper'];
+    const computerWin = ['You Lose! Paper beats Rock',
+                         'You lose! Scissors beats Paper',
+                         'You lose! Rock beats Scissors'];
     let playerScore = 0;
     let computerScore = 0;
     while (playerScore < 3 && computerScore < 3) {
@@ -52,18 +59,14 @@ function game() {
         const computerSelection = computerPlay();
         const round = playRound(playerSelection, computerSelection);
         alert(round);
-        if (round === 'You win! Rock beats Scissors' ||
-            round === 'You win! Paper beats Rock' ||
-            round === 'You win! Scissors beats Paper') {
+        if (playerWin.includes(round)) {
             playerScore += 1;
             alert('You scored 1 point');
         }
         else if (round === 'Tie') {
             alert('No point awarded');
         }
-        else if (round === 'You Lose! Paper beats Rock' ||
-                 round === 'You lose! Scissors beats Paper' ||
-                 round === 'You lose! Rock beats Scissors') {
+        else if (computerWin.includes(round)) {
             computerScore += 1;
             alert('Your opponent scored 1 point');
         }
