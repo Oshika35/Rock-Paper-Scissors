@@ -46,12 +46,14 @@ function playRound(playerSelection, computerSelection) {
 
 
 function game() {
-    const playerWin = ['You win! Rock beats Scissors',
-                       'You win! Paper beats Rock',
-                       'You win! Scissors beats Paper'];
-    const computerWin = ['You Lose! Paper beats Rock',
-                         'You lose! Scissors beats Paper',
-                         'You lose! Rock beats Scissors'];
+    const playerWin = [
+        'You win! Rock beats Scissors',
+        'You win! Paper beats Rock',
+        'You win! Scissors beats Paper'];
+    const computerWin = [
+        'You Lose! Paper beats Rock',
+        'You lose! Scissors beats Paper',
+        'You lose! Rock beats Scissors'];
     let playerScore = 0;
     let computerScore = 0;
     while (playerScore < 3 && computerScore < 3) {
