@@ -40,8 +40,8 @@ function game() {
     const scissorsSelection = document.querySelector("#scissors");
     const computerSelection = computerPlay();
     rockSelection.addEventListener('click', () => console.log(playRound('Rock', computerSelection)));
-    paperSelection.addEventListener('click', (e) => console.log(playRound('Paper', computerSelection)));
-    scissorsSelection.addEventListener('click', (e) => console.log(playRound('Scissors', computerSelection)));
+    paperSelection.addEventListener('click', () => console.log(playRound('Paper', computerSelection)));
+    scissorsSelection.addEventListener('click', () => console.log(playRound('Scissors', computerSelection)));
     // const playerWin = [
     //     'You win! Rock beats Scissors',
     //     'You win! Paper beats Rock',
