@@ -1,0 +1,89 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #3e2723;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+}
+
+.selection-container {
+  display: flex;
+  height: 70vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.result {
+  display: flex;
+  height: 30vh;
+  justify-content: center;
+  align-items: flex-end;
+  color: #FFFF;
+}
+
+.rock-selection,
+.paper-selection,
+.scissors-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icons svg {
+  margin: 0 20px 0 20px;
+}
+
+.container button {
+  margin: 30px 40px 0 40px;
+  color: #ffff;
+  padding: 5px 30px 5px 30px;
+  border-radius: 50px;
+  border: 0;
+}
+
+.container .rock,
+.container .paper,
+.container .scissors {
+  cursor: pointer;
+  transition: 0.2s ease-out;
+}
+
+.container .rock:active,
+.container .paper:active,
+.container .scissors:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:focus {
+  outline: none;
+}
+
+.container .rock {
+  background-color: #b71c1c;
+}
+
+.container .rock:hover {
+  background-color: #7f0000;
+}
+
+.container .paper {
+  background-color: #bf360c;
+}
+
+.container .paper:hover {
+  background-color: #870000;
+}
+
+.container .scissors {
+  background-color: #4a148c;
+}
+
+.container .scissors:hover {
+  background-color: #12005e;
+}

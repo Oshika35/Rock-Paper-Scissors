@@ -1,6 +1,7 @@
 <!doctype html>
 
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
 
@@ -9,16 +10,35 @@
   <meta name="author" content="oshika35">
 
   <link rel="stylesheet" href="css/styles.css">
+  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 
 </head>
 
 <body>
-  <button id="rock">Rock</button>
-  <button id="paper">Paper</button>
-  <button id="scissors">Scissors</button>
+  <div class="container">
+    <div class="result"></div>
+    <div class="selection-container">
+      <div class="rock-selection">
+        <span class="iconify" data-icon="fa-regular:hand-rock" data-inline="false" data-width="100"
+          data-height="100"></span>
+        <button class="rock" id="rock">Rock</button>
+      </div>
+      <div class="paper-selection">
+        <span class="iconify" data-icon="fa-regular:hand-paper" data-inline="false" data-width="100"
+          data-height="100"></span>
+        <button class="paper" id="paper">Paper</button>
+      </div>
+      <div class="scissors-selection">
+        <span class="iconify" data-icon="fa-regular:hand-scissors" data-inline="false" data-width="100"
+          data-height="100"></span>
+        <button class="scissors" id="scissors">Scissors</button>
+      </div>
+    </div>
+  </div>
 </body>
 
 <footer>
   <script src="js/scripts.js"></script>
 </footer>
+
 </html>

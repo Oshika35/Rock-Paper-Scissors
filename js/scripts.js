@@ -10,26 +10,27 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
+    const roundResult = document.querySelector(".result");
     if (playerSelection === computerSelection) {
-        return 'Tie';
+        return roundResult.textContent = 'Tie';
     }
     else if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
-        return 'You win! Rock beats Scissors';
+        return roundResult.textContent = 'You win! Rock beats Scissors';
     }
     else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
-        return 'You win! Paper beats Rock';
+        return roundResult.textContent = 'You win! Paper beats Rock';
     }
     else if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
-        return 'You win! Scissors beats Paper';
+        return roundResult.textContent = 'You win! Scissors beats Paper';
     }
     else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
-        return 'You Lose! Paper beats Rock';
+        return roundResult.textContent = 'You Lose! Paper beats Rock';
     }
     else if (playerSelection === 'Paper' && computerSelection === 'Scissors') {
-        return 'You lose! Scissors beats Paper';
+        return roundResult.textContent = 'You lose! Scissors beats Paper';
     }
     else if (playerSelection === 'Scissors' && computerSelection === 'Rock') {
-        return 'You lose! Rock beats Scissors';
+        return roundResult.textContent = 'You lose! Rock beats Scissors';
     }
 }
 
@@ -38,10 +39,15 @@ function game() {
     const rockSelection = document.querySelector("#rock");
     const paperSelection = document.querySelector("#paper");
     const scissorsSelection = document.querySelector("#scissors");
-    const computerSelection = computerPlay();
-    rockSelection.addEventListener('click', () => console.log(playRound('Rock', computerSelection)));
-    paperSelection.addEventListener('click', () => console.log(playRound('Paper', computerSelection)));
-    scissorsSelection.addEventListener('click', () => console.log(playRound('Scissors', computerSelection)));
+    rockSelection.addEventListener('click', () => {
+        playRound('Rock', computerPlay());
+    });
+    paperSelection.addEventListener('click', () => {
+         playRound('Paper', computerPlay());
+    });
+    scissorsSelection.addEventListener('click', () => {
+        playRound('Scissors', computerPlay());
+    });
     // const playerWin = [
     //     'You win! Rock beats Scissors',
     //     'You win! Paper beats Rock',
