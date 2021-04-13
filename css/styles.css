@@ -18,12 +18,21 @@ body {
   justify-content: center;
 }
 
-.result {
+.game-result {
   display: flex;
   height: 30vh;
   justify-content: center;
   align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.result,
+.score {
+  display: flex;
+  justify-content: center;
   color: #FFFF;
+  font-size: 32px;
+  flex: 1 0 100%;
 }
 
 .rock-selection,
@@ -58,6 +67,10 @@ body {
 .container .scissors:active {
   transform: translateY(-1px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.selection-container.hidden {
+  display:none;
 }
 
 button:focus {
