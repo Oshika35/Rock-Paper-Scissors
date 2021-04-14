@@ -1,11 +1,14 @@
 let playerScore = 0;
 let computerScore = 0;
+const roundResult = document.querySelector(".result");
+const roundScore = document.querySelector(".score");
+const hideButtonSection = document.querySelector(".selection-container");
+const toggleRestartButton = document.querySelector(".restart-selection");
 
 function getUserInput() {
     const rockSelection = document.querySelector("#rock");
     const paperSelection = document.querySelector("#paper");
     const scissorsSelection = document.querySelector("#scissors");
-
     rockSelection.addEventListener('click', () => {
         playRound('Rock', computerPlay());
     });
@@ -15,6 +18,13 @@ function getUserInput() {
     scissorsSelection.addEventListener('click', () => {
         playRound('Scissors', computerPlay());
     });
+    toggleRestartButton.addEventListener('click', () => {
+        hideButtonSection.classList.remove("hidden");
+        toggleRestartButton.classList.add("hidden");
+        playerScore = 0;
+        computerScore = 0;
+        displayScore();
+    });
 }
 
 function computerPlay() {
@@ -23,9 +33,6 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    const roundResult = document.querySelector(".result");
-    const roundScore = document.querySelector(".score");
-    const hideButtonSection = document.querySelector(".selection-container");
     if (playerSelection === computerSelection) {
         roundResult.textContent = 'Tie';
     }
@@ -53,15 +60,21 @@ function playRound(playerSelection, computerSelection) {
         computerScore += 1;
         roundResult.textContent = 'You lose! Rock beats Scissors';
     }
-    roundScore.textContent = "Your score " + playerScore + " | " + computerScore + " Computer Score";
+    displayScore();
     if (playerScore === 5) {
         roundResult.textContent = 'You Won!';
         hideButtonSection.classList.add("hidden");
+        toggleRestartButton.classList.remove("hidden");
     }
     if (computerScore === 5) {
         roundResult.textContent = 'You Lost!';
         hideButtonSection.classList.add("hidden");
+        toggleRestartButton.classList.remove("hidden");
     }
+}
+
+function displayScore() {
+    roundScore.textContent = "Your score " + playerScore + " | " + computerScore + " Computer Score";
 }
 
 getUserInput();

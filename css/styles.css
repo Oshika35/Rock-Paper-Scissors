@@ -2,12 +2,43 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #3e2723;
+  background-color: #212121;
 }
 
-.container {
+.selection-container {
   width: 100%;
   height: 100vh;
+}
+
+.game-result-container {
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.result,
+.score {
+  display: flex;
+  justify-content: center;
+  color: #ffff;
+  font-size: 32px;
+  flex: 1 0 100%;
+}
+
+.restart-selection.hidden {
+  display:none;
+}
+
+.restart-selection {
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+.restart-selection button.restart {
+  color: #000;
 }
 
 .selection-container {
@@ -18,21 +49,8 @@ body {
   justify-content: center;
 }
 
-.game-result {
-  display: flex;
-  height: 30vh;
-  justify-content: center;
-  align-items: flex-end;
-  flex-wrap: wrap;
-}
-
-.result,
-.score {
-  display: flex;
-  justify-content: center;
-  color: #FFFF;
-  font-size: 32px;
-  flex: 1 0 100%;
+.selection-container.hidden {
+  display: none;
 }
 
 .rock-selection,
@@ -43,11 +61,8 @@ body {
   align-items: center;
 }
 
-.icons svg {
-  margin: 0 20px 0 20px;
-}
-
-.container button {
+.selection-container button,
+.restart {
   margin: 30px 40px 0 40px;
   color: #ffff;
   padding: 5px 30px 5px 30px;
@@ -55,48 +70,51 @@ body {
   border: 0;
 }
 
-.container .rock,
-.container .paper,
-.container .scissors {
+.selection-container .rock,
+.selection-container .paper,
+.selection-container .scissors,
+.restart-selection .restart {
   cursor: pointer;
   transition: 0.2s ease-out;
 }
 
-.container .rock:active,
-.container .paper:active,
-.container .scissors:active {
-  transform: translateY(-1px);
+.selection-container .rock:active,
+.selection-container .paper:active,
+.selection-container .scissors:active,
+.restart-selection .restart:active {
+  transform: translateY(-3px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-.selection-container.hidden {
-  display:none;
 }
 
 button:focus {
   outline: none;
 }
 
-.container .rock {
+.selection-container .rock {
   background-color: #b71c1c;
 }
 
-.container .rock:hover {
+.selection-container .rock:hover {
   background-color: #7f0000;
 }
 
-.container .paper {
+.selection-container .paper {
   background-color: #bf360c;
 }
 
-.container .paper:hover {
+.selection-container .paper:hover {
   background-color: #870000;
 }
 
-.container .scissors {
+.selection-container .scissors {
   background-color: #4a148c;
 }
 
-.container .scissors:hover {
+.selection-container .scissors:hover {
   background-color: #12005e;
+}
+
+.restart-selection .restart:hover {
+  background-color: #78909c;
+  color: #FFF;
 }
