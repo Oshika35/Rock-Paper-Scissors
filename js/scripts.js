@@ -1,8 +1,8 @@
 let playerScore = 0;
 let computerScore = 0;
-const roundResult = document.querySelector(".result");
-const roundScore = document.querySelector(".score");
-const hideButtonSection = document.querySelector(".selection-container");
+const roundResult = document.querySelector(".game-display__result");
+const roundScore = document.querySelector(".game-display__score");
+const hideButtonSection = document.querySelector(".player-selection");
 const toggleRestartButton = document.querySelector(".restart-selection");
 
 function getUserInput() {
@@ -19,8 +19,8 @@ function getUserInput() {
         playRound('Scissors', computerPlay());
     });
     toggleRestartButton.addEventListener('click', () => {
-        hideButtonSection.classList.remove("hidden");
-        toggleRestartButton.classList.add("hidden");
+        hideButtonSection.classList.remove("player-selection--hidden");
+        toggleRestartButton.classList.add("restart-selection--hidden");
         playerScore = 0;
         computerScore = 0;
         displayScore();
@@ -63,13 +63,13 @@ function playRound(playerSelection, computerSelection) {
     displayScore();
     if (playerScore === 5) {
         roundResult.textContent = 'You Won!';
-        hideButtonSection.classList.add("hidden");
-        toggleRestartButton.classList.remove("hidden");
+        hideButtonSection.classList.add("player-selection--hidden");
+        toggleRestartButton.classList.remove("restart-selection--hidden");
     }
     if (computerScore === 5) {
         roundResult.textContent = 'You Lost!';
-        hideButtonSection.classList.add("hidden");
-        toggleRestartButton.classList.remove("hidden");
+        hideButtonSection.classList.add("player-selection--hidden");
+        toggleRestartButton.classList.remove("restart-selection--hidden");
     }
 }
 
